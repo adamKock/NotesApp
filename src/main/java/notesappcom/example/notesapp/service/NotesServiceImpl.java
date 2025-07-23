@@ -30,8 +30,8 @@ public class NotesServiceImpl implements NotesService {
     }
 
     @Override
-    public void updatePost(int index, String newTitle, String newBody) {
-        NotesRepo.updatePost(index, newTitle, newBody);
+    public Post updatePost(int index, String newTitle, String newBody) {
+       return NotesRepo.updatePost(index, newTitle, newBody);
     }
 
     @Override

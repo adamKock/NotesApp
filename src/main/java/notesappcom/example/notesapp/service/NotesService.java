@@ -8,10 +8,10 @@ public interface NotesService {
     //Interface class that forces the implementations of the below methods. 
     //These methods should also algin with the NotesRepoClass
     
-    public void createPost(Post post);
+    void createPost(Post post);
     public List<Post> getPosts();
     public Post getPostByIndex(int index);
-    public void updatePost(int index, String newTitle, String newBody);
+    public Post updatePost(int index, String newTitle, String newBody);
     public void deletePost(int index);
 
     

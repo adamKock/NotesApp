@@ -18,7 +18,7 @@ public class NotesRepo {
         }
 
         //Read Post/s
-        public List <Post> getPosts(){
+        public List<Post> getPosts(){
             return posts; 
         } 
 
@@ -38,12 +38,24 @@ public class NotesRepo {
         }
 
         //Update
-        public void updatePost(int index, String newTitle, String newBody){
-            if (index >= 0 && index < posts.size()) {
-                Post post = posts.get(index);
+        public Post updatePost(int index, String newTitle, String newBody){
+           
+            if(index < 0 || index >= posts.size()){
+                System.out.println("Index out of bounds");
+            }
+            Post post = posts.get(index);
+            
+            if (newTitle != null && !newTitle.trim().isEmpty()) {
                 post.setTitle(newTitle);
+            }
+        
+            if (newBody != null && !newBody.trim().isEmpty()) {
                 post.setBody(newBody);
             }
+        
+            return post;
+
+           
     }
         //Delete Post
         public void deletePost(int index){
